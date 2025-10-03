@@ -110,7 +110,8 @@ def features_to_croissant(features):
             return {
                 "name": name,
                 "dataType": "unknown",
-                "description": f"{name} field"
+                "description": f"{name} field",
+                "isArray": False,
             }
 
     return [convert_feature(name, feature) for name, feature in features.items()]
