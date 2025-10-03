@@ -78,35 +78,37 @@ note = {This work was carried under the EvoLand project, cf. https://www.evo-lan
                 yield idx, json.loads(line)
 
 
-def features_to_croissant(features):
+from datasets import Features, Value, Sequence
+
+def features_to_croissant(features: Features):
     """
-    Convert a Hugging Face dataset feature into a Croissant-compatible description.
+    Convert a Hugging Face dataset Features object into a Croissant-compatible description.
     """
     def convert_feature(name: str, feature):
-        if isinstance(feature, datasets.Value):
+        if isinstance(feature, Value):
             return {
                 "name": name,
                 "dataType": feature.dtype,
                 "description": f"{name} field",
                 "isArray": False,
             }
-        elif isinstance(feature, datasets.Sequence):
+        elif isinstance(feature, Sequence):
             inner = feature.feature
-            if isinstance(inner, datasets.Features):  # nested structure
+            if isinstance(inner, Features):  # nested structure
                 return {
                     "name": name,
                     "isArray": True,
                     "description": f"{name} sequence",
                     "features": [convert_feature(k, v) for k, v in inner.items()]
                 }
-            elif isinstance(inner, datasets.Value):  # flat sequence
+            elif isinstance(inner, Value):  # flat sequence
                 return {
                     "name": name,
                     "isArray": True,
                     "description": f"{name} sequence",
                     "dataType": inner.dtype
                 }
-        elif isinstance(feature, datasets.Features):  # top-level nested structure
+        elif isinstance(feature, Features):  # top-level nested structure
             return {
                 "name": name,
                 "description": f"{name} nested structure",
