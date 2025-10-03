@@ -21,3 +21,14 @@ Additional details provides [README.ipynb](README.ipynb).
 ## Funding
 
 This work was carried under the *EvoLand* project, cf. https://www.evo-land.eu . This project has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement No. `101082130`.
+
+## Citation
+
+```bibtex
+@misc{ssl4eo_eu_forest,
+  author       = {Braham, Nassim Ait Ali and Albrecht, Conrad M},
+  title        = {SSL4EO-EU Forest Dataset},
+  year         = {2025},
+  howpublished = {https://github.com/cmalbrec/ssl4eo_eu_forest}
+}
+```
