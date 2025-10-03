@@ -1,5 +1,5 @@
 import pytest
-import ssl4eo_eu_forest.ssl4eo_eu_forest as ssl4eo_eu_forest
+import ssl4eo_eu_forest.ssl4eo_eu_forest_hf as ssl4eo_eu_forest
 import datasets
 import json
 from unittest.mock import patch
