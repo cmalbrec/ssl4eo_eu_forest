@@ -1,4 +1,4 @@
-from ssl4eo_forest.dataset import SSL4EOEUForestTG
+from ssl4eo_eu_forest.dataset import SSL4EOEUForestTG
 
 def test_dataset_loads():
     ds = SSL4EOEUForestTG(root="./cache")
