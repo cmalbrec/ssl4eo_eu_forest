@@ -48,7 +48,7 @@ class SSL4EOEUForest(datasets.GeneratorBasedBuilder):
 author = {Nassim Ait Ali Braham and Conrad M Albrecht},
 title = {SSL4EO-EU Forest Dataset},
 year = {2025},
-howpublished = {https://huggingface.co/datasets/dm4eo/ssl4eo-eu-forest},
+howpublished = {https://huggingface.co/datasets/dm4eo/ssl4eo_eu_forest},
 note = {This work was carried under the EvoLand project, cf. https://www.evo-land.eu . This project has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement No. 101082130.}
 }""",
             # project homepage
