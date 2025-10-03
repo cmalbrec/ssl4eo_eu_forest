@@ -6,6 +6,7 @@ import shapely
 import geopandas as gpd
 import pandas as pd
 import logging
+import folium
 from torchgeo.datasets import GeoDataset
 from datasets import load_dataset
 from huggingface_hub import hf_hub_url
@@ -183,9 +184,8 @@ class SSL4EOEUForestTG(GeoDataset):
 
         return rgb_dict
 
-    def show_bbox_folium(self, sample_or_index: Union[int, Dict[str, Any]]) -> "folium.Map":
+    def show_bbox_folium(self, sample_or_index: Union[int, Dict[str, Any]]) -> folium.Map:
         """Display the bounding box of a sample on an interactive folium map."""
-        import folium
         from shapely.geometry import mapping
 
         if isinstance(sample_or_index, int):
