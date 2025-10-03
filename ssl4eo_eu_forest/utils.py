@@ -3,7 +3,7 @@ from datetime import datetime
 import rasterio
 from rasterio.warp import transform_bounds
 from concurrent.futures import ProcessPoolExecutor, as_completed
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 import json
 
 # Season detection
