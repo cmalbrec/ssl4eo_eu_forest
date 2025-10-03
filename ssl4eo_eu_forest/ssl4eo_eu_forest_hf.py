@@ -94,21 +94,24 @@ def features_to_croissant(features: Features):
             }
         elif isinstance(feature, Sequence):
             inner = feature.feature
-            if isinstance(inner, Features):  # nested structure
+            # Handle nested sequence of Features
+            if isinstance(inner, Features):
                 return {
                     "name": name,
                     "isArray": True,
                     "description": f"{name} sequence",
                     "features": [convert_feature(k, v) for k, v in inner.items()]
                 }
-            elif isinstance(inner, Value):  # flat sequence
+            # Handle flat sequence of Values
+            elif isinstance(inner, Value):
                 return {
                     "name": name,
                     "isArray": True,
                     "description": f"{name} sequence",
                     "dataType": inner.dtype
                 }
-        elif isinstance(feature, Features):  # top-level nested structure
+        elif isinstance(feature, Features):
+            # Top-level nested structure (not a sequence)
             return {
                 "name": name,
                 "description": f"{name} nested structure",
@@ -124,3 +127,4 @@ def features_to_croissant(features: Features):
             }
 
     return [convert_feature(name, feature) for name, feature in features.items()]
+
