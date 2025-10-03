@@ -98,7 +98,7 @@ def features_to_croissant(features):
                     "description": f"{name} sequence",
                     "features": [convert_feature(k, v) for k, v in inner.items()]
                 }
-            elif isinstance(inner, Value):  # flat sequence
+            elif isinstance(inner, datasets.Value):  # flat sequence
                 return {
                     "name": name,
                     "isArray": True,
