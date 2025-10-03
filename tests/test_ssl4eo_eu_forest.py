@@ -13,10 +13,16 @@ def test_info_structure():
     assert info.description.startswith("SSL4EO-EU Forest")
     assert info.citation.startswith("@misc{ssl4eo_eu_forest")
 
-@patch("datasets.builder._PACKAGED_DATASETS_MODULES", {})
+
 def test_features_to_croissant_basic():
-    info = ssl4eo_eu_forest.SSL4EOEUForest()._info()
-    croissant = ssl4eo_eu_forest.features_to_croissant(info.features)
+    features = datasets.Features({
+        "group_id": datasets.Value("string"),
+        "images": datasets.Sequence({
+            "path": datasets.Value("string"),
+            "season": datasets.Value("string")
+        })
+    })
+    croissant = ssl4eo_eu_forest.features_to_croissant(features)
     assert isinstance(croissant, list)
     assert any(f["name"] == "group_id" for f in croissant)
     assert any(f["name"] == "images" and f["isArray"] for f in croissant)
