@@ -2,7 +2,7 @@
 
 ## Dataset
 
- Detail on HuggingFace: https://huggingface.co/datasets/dm4eo/ssl4eo_eu_forest .
+ Details on HuggingFace: https://huggingface.co/datasets/dm4eo/ssl4eo_eu_forest .
 
 ## Quickstart
 
