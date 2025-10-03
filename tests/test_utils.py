@@ -68,13 +68,13 @@ def test_process_group_and_metadata(tmp_path):
 def test_metadata_jsonl_output(tmp_path):
     base_dir = tmp_path
     group_id = "0000005"
-    group_dir = base_dir / "images" / group_id
-    mask_dir = base_dir / "masks" / group_id
+    group_dir = base_dir / "images" / group_id / "20180206T084129_20180206T084229_T36SVF"
+    mask_dir = base_dir / "masks" / group_id 
     group_dir.mkdir(parents=True)
     mask_dir.mkdir(parents=True)
 
     create_dummy_tif(mask_dir / "mask.tif")
-    create_dummy_tif(group_dir / "20180206T084129_20180206T084229_T36SVF" / "all_bands.tif", crs="EPSG:32632")
+    create_dummy_tif(group_dir / "all_bands.tif", crs="EPSG:32632")
 
     metadata_jsonl_from_ssl4eo_eu_forest_dir(str(base_dir))
 
