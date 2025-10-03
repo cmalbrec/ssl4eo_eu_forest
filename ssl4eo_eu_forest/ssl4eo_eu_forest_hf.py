@@ -106,6 +106,13 @@ def features_to_croissant(features):
                     "description": f"{name} sequence",
                     "dataType": inner.dtype
                 }
+        elif isinstance(feature, datasets.Features):  # top-level nested structure
+            return {
+                "name": name,
+                "description": f"{name} nested structure",
+                "features": [convert_feature(k, v) for k, v in feature.items()],
+                "isArray": False
+            }
         else:
             return {
                 "name": name,
