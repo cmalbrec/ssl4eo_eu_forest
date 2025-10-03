@@ -10,7 +10,7 @@ Install the `ssl4eu_eu_forest` Python module:
 ```Bash
 pip install git+https://github.com/cmalbrec/ssl4eo_eu_forest.git
 ```
-and stream load a sample through the custom TorchGeo dataset:
+and stream-load a sample through the custom TorchGeo dataset:
 ```Python
 from ssl4eo_eu_forest import SSL4EOEUForestTG
 dataset = SSL4EOEUForestTG(root="./cache")
