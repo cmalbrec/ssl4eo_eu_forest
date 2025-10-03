@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ssl4eo_eu_forest"
+version = "1.0"
+description = "TorchGeo-compatible dataset for SSL4EO-EU Forest segmentation"
+authors = [{name = "Conrad M Albrecht"}]
+dependencies = [
+    "torch",
+    "torchgeo",
+    "rasterio",
+    "geopandas",
+    "shapely",
+    "folium",
+    "requests",
+    "datasets",
+    "huggingface_hub"
+]
+requires-python = ">=3.8"
