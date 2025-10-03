@@ -4,7 +4,7 @@
 
  Detail on HuggingFace: https://huggingface.co/datasets/dm4eo/ssl4eo_eu_forest .
 
- # Quickstart
+## Quickstart
 
 Install the `ssl4eu_eu_forest` Python module:
 ```Bash
@@ -17,3 +17,7 @@ dataset = SSL4EOEUForestTG(root="./cache")
 ```
 
 Additional details provides [README.ipynb](README.ipynb).
+
+## Funding
+
+This work was carried under the *EvoLand* project, cf. https://www.evo-land.eu . This project has received funding from the European Union's Horizon Europe research and innovation programme under grant agreement No. `101082130`.
