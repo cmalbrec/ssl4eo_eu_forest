@@ -7,15 +7,16 @@ setup(
     author="Conrad M Albrecht",
     packages=find_packages(),
     install_requires=[
-        "torch",
-        "torchgeo",
-        "rasterio",
-        "geopandas",
-        "shapely",
-        "folium",
-        "requests",
-        "datasets",
-        "huggingface_hub"
+        "torch>=1.12",
+        "torchgeo>=0.4",
+        "rasterio>=1.3",
+        "geopandas>=0.13",
+        "shapely>=2.0",
+        "folium>=0.14",
+        "requests>=2.28",
+        "datasets>=2.14",
+        "huggingface_hub>=0.17",
+        "tqdm>=4.66"
     ],
     python_requires=">=3.8",
 )
