@@ -2,6 +2,8 @@ import pytest
 import ssl4eo_eu_forest.ssl4eo_eu_forest as ssl4eo_eu_forest
 import datasets
 import json
+from unittest.mock import patch
+
 
 def test_info_structure():
     info = ssl4eo_eu_forest.SSL4EOEUForest()._info()
@@ -11,6 +13,7 @@ def test_info_structure():
     assert info.description.startswith("SSL4EO-EU Forest")
     assert info.citation.startswith("@misc{ssl4eo_eu_forest")
 
+@patch("datasets.builder._PACKAGED_DATASETS_MODULES", {})
 def test_features_to_croissant_basic():
     info = ssl4eo_eu_forest.SSL4EOEUForest()._info()
     croissant = ssl4eo_eu_forest.features_to_croissant(info.features)
