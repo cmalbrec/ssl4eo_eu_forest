@@ -87,7 +87,8 @@ def features_to_croissant(features):
             return {
                 "name": name,
                 "dataType": feature.dtype,
-                "description": f"{name} field"
+                "description": f"{name} field",
+                "isArray": False,
             }
         elif isinstance(feature, datasets.Sequence):
             inner = feature.feature
