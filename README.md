@@ -26,7 +26,7 @@ This work was carried under the *EvoLand* project, cf. https://www.evo-land.eu .
 
 ```bibtex
 @misc{ssl4eo_eu_forest,
-  author       = {Braham, Nassim Ait Ali and Albrecht, Conrad M},
+  author       = {Braham, Ait Ali, Nassim and Albrecht, Conrad M},
   title        = {SSL4EO-EU Forest Dataset},
   year         = {2025},
   howpublished = {https://github.com/cmalbrec/ssl4eo_eu_forest}
