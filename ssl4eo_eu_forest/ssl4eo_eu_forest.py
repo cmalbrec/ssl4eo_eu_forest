@@ -80,9 +80,9 @@ note = {This work was carried under the EvoLand project, cf. https://www.evo-lan
 
 def features_to_croissant(features):
     """
-    Convert a HF dataset feature into a Croissant-compatible description.
+    Convert a Hugging Face dataset feature into a Croissant-compatible description.
     """
-    def convert_feature(name:str, feature:datasets.features.features.Features):
+    def convert_feature(name: str, feature):
         if isinstance(feature, datasets.Value):
             return {
                 "name": name,
@@ -92,7 +92,7 @@ def features_to_croissant(features):
             }
         elif isinstance(feature, datasets.Sequence):
             inner = feature.feature
-            if isinstance(inner, dict):  # nested structure
+            if isinstance(inner, datasets.Features):  # nested structure
                 return {
                     "name": name,
                     "isArray": True,
