@@ -1,6 +1,7 @@
 import pytest
 import ssl4eo_eu_forest.ssl4eo_eu_forest as ssl4eo_eu_forest
 import datasets
+import json
 
 def test_info_structure():
     info = ssl4eo_eu_forest.SSL4EOEUForest()._info()
