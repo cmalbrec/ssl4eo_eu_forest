@@ -14,7 +14,7 @@ setup(
         "shapely>=2.0",
         "folium>=0.14",
         "requests>=2.28",
-        "datasets>=2.14",
+        "datasets>=2.14,<=2.19.2",
         "huggingface_hub>=0.17",
         "tqdm>=4.66",
         "numpy>=1.23"
